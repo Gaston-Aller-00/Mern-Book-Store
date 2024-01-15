@@ -1,12 +1,21 @@
 import React from "react";
 import Banner from "../components/Banner";
-import FavoriteBooks from "./FavoriteBooks";
-
+import BestSellerBooks from "./BestSellerBooks";
+import FavBook from "./FavBook";
+import PromoBanner from "./PromoBanner";
+import OtherBooks from "./OtherBooks";
+import Review from "./Review";
+// all shit
 const Home = () => {
   return (
     <div>
       <Banner />
-      <FavoriteBooks/>
+      <BestSellerBooks/>
+      <FavBook/>
+      <PromoBanner/>
+      <OtherBooks/>
+      <Review/>
+     
     </div>
   );
 };
