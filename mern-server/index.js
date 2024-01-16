@@ -81,6 +81,15 @@ async function run() {
     })
 
 
+    //toger single book data 
+
+    app.get("/book/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const result = await bookCollections.findOne(filter);
+      res.send(result)
+  })
+
     
      // delete a item from db
      app.delete("/book/:id", async (req, res) => {
