@@ -1,13 +1,20 @@
-import { useState } from 'react'
-import './App.css'
+import "./App.css";
+import { Outlet } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import MyFooter from "./Home/MyFooter";
 
 function App() {
-
   return (
     <>
-    <div className='text-2xl bg-red-500'>MERN</div>
+      <NavBar />
+      
+      <div className="min-h-screen"> 
+      {/* fix footer */}
+        <Outlet />
+      </div>
+      <MyFooter />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
