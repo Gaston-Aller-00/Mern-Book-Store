@@ -11,32 +11,35 @@ import {
   HiUser,
   HiViewBoards,
 } from "react-icons/hi";
-import pic from "../assets/picProfile.jpg"
+import pic from "../assets/picProfile.jpg";
 import userImg from "../assets/profile.jpg";
+import { useContext } from "react";
+import { AuthContext } from "../contects/AuthProvider";
 
 const SideBar = () => {
+  const { user } = useContext(AuthContext);
+
   return (
+    //nickgmail person
     <Sidebar aria-label="Sidebar with content separator example">
-      <Sidebar.Logo href="#" img={pic}  imgAlt="PicPerfil">
-        Books
+      <Sidebar.Logo href="/" img={user?.photoURL} imgAlt="PicPerfil">
+        {user?.displayName || "Demo"}
       </Sidebar.Logo>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
           <Sidebar.Item href="/admin/dashboard" icon={HiChartPie}>
             Dashboard
           </Sidebar.Item>
-          <Sidebar.Item href="/admin/dashboard/upload" icon={HiOutlineCloudUpload}>
+          <Sidebar.Item
+            href="/admin/dashboard/upload"
+            icon={HiOutlineCloudUpload}
+          >
             Upload Books
           </Sidebar.Item>
           <Sidebar.Item href="/admin/dashboard/manage" icon={HiInbox}>
-           Manage Books
+            Manage Books
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiUser}>
-            Users
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiShoppingBag}>
-            Products
-          </Sidebar.Item>
+
           <Sidebar.Item href="/login" icon={HiArrowSmRight}>
             Sign In
           </Sidebar.Item>
@@ -45,12 +48,6 @@ const SideBar = () => {
           </Sidebar.Item>
         </Sidebar.ItemGroup>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
-            Upgrade to Pro
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiViewBoards}>
-            Documentation
-          </Sidebar.Item>
           <Sidebar.Item href="#" icon={BiBuoy}>
             Help
           </Sidebar.Item>
