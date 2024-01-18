@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 //iconos
 import { FaBarsStaggered, FaBlog, FaXmark } from "react-icons/fa6";
+import { AuthContext } from "../contects/AuthProvider";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+
+  const  {user} = useContext(AuthContext)
 
   //menu toggle
 
@@ -63,8 +66,11 @@ const NavBar = () => {
           {/* btn para LG */}
           <div className="space-x-12 hidden lg:flex items-center">
             <button>
-              <FaBarsStaggered className="w-5 hover:text-blue-700" />
+              <FaBarsStaggered className="w-5 hover:text-blue-700 mr-4" />
             </button>
+            {
+              user? user.email : ""
+            }
           </div>
 
           {/* menu btn for mobiles  */}
