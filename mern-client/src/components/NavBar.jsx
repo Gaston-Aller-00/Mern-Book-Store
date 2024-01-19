@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 //iconos
 import { FaBarsStaggered, FaBlog, FaXmark } from "react-icons/fa6";
+import { FaUserAlt } from "react-icons/fa";
+
 import { AuthContext } from "../contects/AuthProvider";
 
 const NavBar = () => {
@@ -34,10 +36,10 @@ const NavBar = () => {
 
   const navItems = [
     { link: "Home", path: "/" },
-    { link: "About", path: "/about" },
+    // { link: "About", path: "/about" },
     { link: "Shop", path: "/shop" },
-    { link: "Sell Your Book", path: "/admin/dashboard" },
-    { link: "Blog", path: "/blog" },
+    { link: "Sell Your Book", path: "/admin/dashboard/upload" },
+    // { link: "Blog", path: "/blog" },
   ];
 
   return (
@@ -48,7 +50,7 @@ const NavBar = () => {
           <Link to="shop" className="text-2xl font-bold text-blue-700">
             <FaBlog className="inline-block" />
             Books
-          </Link>
+          </Link> 
 
           {/*  nav items para LG */}
 
@@ -66,7 +68,8 @@ const NavBar = () => {
           {/* btn para LG */}
           <div className="space-x-12 hidden lg:flex items-center">
             <button>
-              <FaBarsStaggered className="w-5 hover:text-blue-700 mr-4" />
+            <FaUserAlt className="w-5 hover:text-blue-700 mr-4 marker:" />
+              <FaBarsStaggered className="w-5 hover:text-blue-700 mr-4 sm:hidden" />
             </button>
             {
               user? user.email : ""
