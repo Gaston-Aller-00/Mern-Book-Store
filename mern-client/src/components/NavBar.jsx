@@ -68,7 +68,9 @@ const NavBar = () => {
           {/* btn para LG */}
           <div className="space-x-12 hidden lg:flex items-center">
             <button>
+              <Link to="/logout">
             <FaUserAlt className="w-5 hover:text-blue-700 mr-4 marker:" />
+            </Link>
               <FaBarsStaggered className="w-5 hover:text-blue-700 mr-4 sm:hidden" />
             </button>
             {
