@@ -7,7 +7,7 @@ const OtherBooks = () => {
       useEffect(() => {
         fetch("http://localhost:5000/all-books")
           .then((res) => res.json())
-          .then((data) => setBooks(data.slice(0,10)));
+          .then((data) => setBooks(data.slice(6,16)));
       }, []);
     
       return (

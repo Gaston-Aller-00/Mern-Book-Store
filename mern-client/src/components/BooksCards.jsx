@@ -63,11 +63,11 @@ const BooksCards = ({ headline, books }) => {
                 </div>
                 <div>
                   <div>
-                    <h3>{book.bookTitle}</h3>
-                    <p>{book.authorName}</p>
+                    <h3 className="font-bold" >{book.bookTitle}</h3>
+                    <p className="font-semibold">{book.authorName}</p>
                   </div>
                   <div>
-                    <p>$10.00</p>
+                    <p className="font-medium ">$10.00</p>
                   </div>
                 </div>
               </Link>
