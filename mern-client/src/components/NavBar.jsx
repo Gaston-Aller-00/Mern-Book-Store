@@ -20,7 +20,7 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 10) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -36,7 +36,7 @@ const NavBar = () => {
 
   const navItems = [
     { link: "Home", path: "/" },
-    // { link: "About", path: "/about" },
+    { link: "FAQ", path: "/faq" },
     { link: "Shop", path: "/shop" },
     { link: "Sell Your Book", path: "/admin/dashboard/upload" },
     // { link: "Blog", path: "/blog" },

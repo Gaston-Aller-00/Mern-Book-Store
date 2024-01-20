@@ -16,21 +16,21 @@ const MyFooter = () => {
         </div>
         <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
           <div>
-            <Footer.Title title="about" />
+            <Footer.Title title="about" className='mt-6' />
             <Footer.LinkGroup col>
-              <Footer.Link href="#">Books</Footer.Link>
-              <Footer.Link href="#">FAQ</Footer.Link>
+              <Footer.Link href="/shop">Books</Footer.Link>
+              <Footer.Link href="/faq">FAQ</Footer.Link>
             </Footer.LinkGroup>
           </div>
           <div>
-            <Footer.Title title="Follow us" />
+            <Footer.Title title="Follow us" className='mt-6' />
             <Footer.LinkGroup col>
               <Footer.Link target='_blank' href="https://github.com/Gaston-Aller-00">Github</Footer.Link>
               <Footer.Link href="#">Discord</Footer.Link>
             </Footer.LinkGroup>
           </div>
           <div>
-            <Footer.Title title="Legal" />
+            <Footer.Title title="Legal" className='mt-6' />
             <Footer.LinkGroup col>
               <Footer.Link href="#">Privacy Policy</Footer.Link>
               <Footer.Link href="#">Terms &amp; Conditions</Footer.Link>

@@ -48,9 +48,9 @@ const SideBar = () => {
           </Sidebar.Item>
         </Sidebar.ItemGroup>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={BiBuoy}>
+          {/* <Sidebar.Item href="#" icon={BiBuoy}>
             Help
-          </Sidebar.Item>
+          </Sidebar.Item> */}
         </Sidebar.ItemGroup>
       </Sidebar.Items>
     </Sidebar>
