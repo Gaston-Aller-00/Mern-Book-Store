@@ -17,8 +17,8 @@ const Shop = () => {
       <h2 className="text-5xl font-bold text-center">All Books are here</h2>
   
       <div className="grid gap-8 my-12 lg:grid-cols-4 sm:grid-cols-2 md:grid-col-3 grid-cols-1">
-        {books.map((book) => (
-          <Card key={book._id} className="card">
+        {books.map((book,index) => (
+          <Card key={`${book._id}-${index}`} className="card">
             <img src={book.imageURL} alt="cardBook" className="" />
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {book.bookTitle}
