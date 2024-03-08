@@ -20,6 +20,8 @@
     background-size: cover;
   }
   
+
+  /* src/assets */
   .banner-card .swiper-slide:nth-child(1n) {
     background-image: url('/banner-books/book3.png');
   }
