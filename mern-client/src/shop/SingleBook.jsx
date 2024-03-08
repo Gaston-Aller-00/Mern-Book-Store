@@ -2,6 +2,8 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { Card } from "flowbite-react";
 import { PiShareNetwork } from "react-icons/pi";
+import {getRandomPrice} from "../components/BooksCards";
+
 
 const SingleBook = () => {
   const {
@@ -28,7 +30,7 @@ const SingleBook = () => {
       <Card className="w-full lg:w-3/4 xl:w-1/2">
         <div className="p-4 lg:p-11">
           <div className="flex items-center justify-between">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-2">
+            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">
               {bookTitle}
             </h2>
             <a href={bookPdfUrl} target="_blank" rel="noopener noreferrer">
@@ -37,12 +39,12 @@ const SingleBook = () => {
           </div>
 
           <h3 className="text-xl font-semibold mb-4">{authorName}</h3>
-          <p className="text-black text-base mb-4">{category}</p>
+          <p className=" font-semibold  mb-4">{category}</p>
           <p className="text-gray-700 dark:text-gray-400">{bookDescription}</p>
         </div>
         <div className="flex items-center justify-center lg:justify-start gap-4 p-4">
           <span className="text-3xl font-bold text-gray-900 dark:text-white">
-            $10.00
+          {getRandomPrice()}
           </span>
           <a
             href="#"

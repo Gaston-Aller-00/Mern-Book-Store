@@ -6,6 +6,9 @@
     @apply bg-blue-700 text-white font-semibold px-5 py-2 rounded hover:bg-black transition-all duration-300
 }
 
+.footerItems{
+ @apply hover:text-blue-700
+}
 /* header y nav para que sobrescriba todo */
 header, nav {
     z-index:100001 !important

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "flowbite-react";
 import { Link } from "react-router-dom";
+
 const ManageBooks = () => {
   const [allBooks, setAllBooks] = useState([]);
 
@@ -9,17 +10,18 @@ const ManageBooks = () => {
       .then((res) => res.json())
       .then((data) => setAllBooks(data));
   }, []);
+
   // delete book
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/book/${id}
-    `,{
-      method:"DELETE",
+    fetch(`http://localhost:5000/book/${id}`, {
+      method: "DELETE",
     })
       .then((res) => res.json())
-      .then((data) => {alert("Book is deleted amigui!")
-      // setAllBooks(data);
-    });
+      .then((data) => {
+        alert("Book is deleted amigui!");
+        // setAllBooks(data);
+      });
   };
 
   return (
@@ -38,14 +40,15 @@ const ManageBooks = () => {
             <span>Edit or Manage</span>
           </Table.HeadCell>
         </Table.Head>
-        {allBooks.map((book, index) => (
-          <Table.Body className="divide-y" key={book._id}>
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+        <Table.Body className="divide-y">
+          {allBooks.map((book, index) => (
+            <Table.Row
+              className="bg-white dark:border-gray-700 dark:bg-gray-800"
+              key={`book-${book._id}`}
+            >
               <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                {/* para que sume en la tabla y no sea todo 1  */}
                 {index + 1}
               </Table.Cell>
-              {/* img de los boks en la table */}
               <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                 <img
                   className="rounded"
@@ -60,12 +63,10 @@ const ManageBooks = () => {
               <Table.Cell>{book.authorName}</Table.Cell>
               <Table.Cell>{book.category}</Table.Cell>
               <Table.Cell>10.00</Table.Cell>
-              {/* <Table.Cell>$10.00</Table.Cell> */}
               <Table.Cell>
                 <Link
-                  href="#"
-                  className="font-medium text-cyan-600 hover:underline dark:text-cyan-500 mr-5"
                   to={`/admin/dashboard/edit-books/${book._id}`}
+                  className="font-medium text-cyan-600 hover:underline dark:text-cyan-500 mr-5"
                 >
                   Edit
                 </Link>
@@ -77,8 +78,8 @@ const ManageBooks = () => {
                 </button>
               </Table.Cell>
             </Table.Row>
-          </Table.Body>
-        ))}
+          ))}
+        </Table.Body>
       </Table>
     </div>
   );

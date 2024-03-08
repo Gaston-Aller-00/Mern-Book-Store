@@ -8,7 +8,7 @@ import { AuthContext } from "../contects/AuthProvider";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
+  const [isSticky, setIsSticky] = useState(true);
 
   const  {user} = useContext(AuthContext)
 
@@ -17,20 +17,20 @@ const NavBar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.addEventListener("scroll", handleScroll);
-    };
-  }, []);
+//la nav siempre activa 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 10) {
+  //       setIsSticky(true);
+  //     } else {
+  //       setIsSticky(false);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.addEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   //nav items
 
@@ -54,7 +54,7 @@ const NavBar = () => {
 
           {/*  nav items para LG */}
 
-          <ul className="md:flex space-x-12 hidden ">
+          <ul className="font-semibold md:flex space-x-12 hidden ">
             {navItems.map(({ link, path }) => (
               <Link
                 key={path}

@@ -26,8 +26,8 @@ import { Pagination } from "swiper/modules";
 const Review = () => {
   return (
     <div className="my-12 px-4 lg:px-24">
-      <h2 className="text-5xl font-bold text-center mb-10 leading-snug">
-        Best Selling Writers
+      <h2 className="text-5xl font-extrabold text-center mb-10 leading-snug">
+        Best Selling <span className="text-blue-700">Writers</span>
       </h2>
 
       {/* reviews card */}
@@ -37,7 +37,7 @@ const Review = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        // modules={[Pagination]}
         breakpoints={{
           640: {
             slidesPerView: 1,
@@ -54,7 +54,7 @@ const Review = () => {
         }}
         className="mySwiper"
       >
-        <SwiperSlide className="shadow-xl bg-white py-8 px-4 md:m-5 rounded-lg border">
+        <SwiperSlide className="shadow bg-white py-8 px-4 md:m-5 rounded-lg border">
           <div className="space-y-6">
             <div className="text-amber-500 flex gap-2">
               <FaStar />
@@ -83,7 +83,7 @@ const Review = () => {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="shadow-xl bg-white py-8 px-4 md:m-5 rounded-lg border">
+        <SwiperSlide className="shadow bg-white py-8 px-4 md:m-5 rounded-lg border">
           <div className="space-y-6">
             <div className="text-amber-500 flex gap-2">
               <FaStar />
@@ -108,11 +108,11 @@ const Review = () => {
                 className="w-10 mb-4"
               />
               <h5 className="text-lg font-medium">Masashi Kishimoto</h5>
-              <p className="text-sm"> Writter</p>
+              <p className="text-sm"> Mangaka</p>
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="shadow-xl bg-white py-8 px-4 md:m-5 rounded-lg border">
+        <SwiperSlide className="shadow bg-white py-8 px-4 md:m-5 rounded-lg border">
           <div className="space-y-6">
             <div className="text-amber-500 flex gap-2">
               <FaStar />
@@ -134,13 +134,13 @@ const Review = () => {
                 className="w-10 mb-4"
               />
               <h5 className="text-lg font-medium">
-                J. K. Rowling Escritora británica
+                J. K. Rowling 
               </h5>
               <p className="text-sm">Writter</p>
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="shadow-xl bg-white py-8 px-4 md:m-5 rounded-lg border">
+        <SwiperSlide className="shadow bg-white py-8 px-4 md:m-5 rounded-lg border">
           <div className="space-y-6">
             <div className="text-amber-500 flex gap-2">
               <FaStar />
@@ -162,7 +162,7 @@ const Review = () => {
                 className="w-10 mb-4"
               />
               <h5 className="text-lg font-medium">Kengo Hanazawa</h5>
-              <p className="text-sm"> Writter</p>
+              <p className="text-sm"> Mangaka</p>
             </div>
           </div>
         </SwiperSlide>

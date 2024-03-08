@@ -1,27 +1,26 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// import "./styles.css";
-
-// import required modules
 import { Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
-
 import { FaCartShopping } from "react-icons/fa6";
+//para poner price aleatorio
 
-const BooksCards = ({ headline, books }) => {
+export  const getRandomPrice = () => {
+  const min = 10;
+  const max = 20;
+  const randomDollars = Math.floor(Math.random() * (max - min + 1)) + min;
+  const randomCents = Math.random() < 0.5 ? 50 : 99;
+  return `$${randomDollars}.${randomCents}`;
+};
+
+const BooksCards = ({ headline, headline2, books }) => {
   return (
     <div className="my-16 px-4 lg:px-24">
-      <h2 className="text-5xl  text-center font-bold text-black my-5">
+      <h2 className="text-5xl text-center font-extrabold text-black my-5">
         {headline}
+        <span className="text-blue-600 dark:text-blue-500">{headline2}</span>
       </h2>
       {/* cards */}
-
       <div className="mt-12">
         <Swiper
           slidesPerView={1}
@@ -52,22 +51,22 @@ const BooksCards = ({ headline, books }) => {
                 <div className="relative">
                   <div className="card">
                     <img
-                      className="  rounded-xl"
+                      className="rounded-xl"
                       src={book.imageURL}
                       alt="pic book"
                     ></img>
-                    <div className=" absolute top-3 right-3 bg-blue-600 hover:bg-black p-2 rounded">
+                    <div className="absolute top-3 right-3 bg-blue-600 hover:bg-black p-2 rounded">
                       <FaCartShopping className="w-4 h-4 text-white" />
                     </div>
                   </div>
                 </div>
                 <div>
                   <div>
-                    <h3 className="font-bold" >{book.bookTitle}</h3>
+                    <h3 className="font-bold">{book.bookTitle}</h3>
                     <p className="font-semibold">{book.authorName}</p>
                   </div>
                   <div>
-                    <p className="font-medium ">$10.00</p>
+                    <p className="font-medium">{getRandomPrice()}</p>
                   </div>
                 </div>
               </Link>

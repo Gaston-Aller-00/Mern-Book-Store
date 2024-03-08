@@ -10,7 +10,7 @@ const FavBook = () => {
         </div>
         <div className='md:w-1/2 space-y-6'>
             <h2 className='text-5xl font-bold my-5 md:w-3/4 leading-snug'>Find Your Favorite <span className='text-blue-700'>Book Here!</span></h2>
-            <p className='mb-10 text-lg md:w-5/6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, quam quisquam repellendus impedit dolor, a facilis provident eaque rerum deleniti non. Provident voluptates dolores harum eaque facere, unde rem animi.</p>
+            <p className='mb-10 text-lg md:w-5/6'>At Book Store, our shelves proudly house a treasure trove of knowledge with over 800 carefully curated books. From literary masterpieces to hidden gems, our expansive collection caters to every taste and curiosity. Whether you're a devoted reader seeking a familiar classic or an adventurous spirit ready to explore new narratives, Book Store is your destination.</p>
             {/* stats de la page */}
                 <div className='flex flex-col sm:flex-row justify-between gap-6 md:w-3/4 my-14'>
                     <div>

@@ -13,7 +13,7 @@ const BestSellerBooks = () => {
 
   return (
     <div>
-      <BooksCards books={books} headline="Best Seller Books" />
+      <BooksCards books={books}  headline="Best Seller " headline2="Books" />
     </div>
   );
 };

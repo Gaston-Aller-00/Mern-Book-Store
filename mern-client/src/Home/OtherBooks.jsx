@@ -12,7 +12,7 @@ const OtherBooks = () => {
     
       return (
         <div>
-          <BooksCards books={books} headline="Other Books" />
+          <BooksCards books={books} headline="Other " headline2="Interesting Books" />
         </div>
       );
 }
