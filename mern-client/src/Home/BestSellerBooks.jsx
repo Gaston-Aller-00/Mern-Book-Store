@@ -1,19 +1,25 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
+import useFetchData from "../hooks/useFetchData";
 import BooksCards from "../components/BooksCards";
 
 const BestSellerBooks = () => {
-  const [books, setBooks] = useState([]);
-//fetch para traer los books
-  useEffect(() => {
-    fetch("https://mern-book-store-eta.vercel.app/all-books")
-      .then((res) => res.json())
-      .then((data) => setBooks(data.slice(0,11)));
-  }, []);
+  const {
+    data: books,
+    isLoading,
+    loadingComponent,
+  } = useFetchData(
+    "https://mern-book-store-eta.vercel.app/all-books",
+    0,
+    16
+    //slice custom
+  );
 
   return (
     <div>
-      <BooksCards books={books}  headline="Best Seller " headline2="Books" />
+      {loadingComponent}
+      {!isLoading && (
+        <BooksCards books={books} headline="Best Seller " headline2="Books" />
+      )}
     </div>
   );
 };
