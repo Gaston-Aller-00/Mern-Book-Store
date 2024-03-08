@@ -26,7 +26,7 @@
 
   /* src/assets */
   .banner-card .swiper-slide:nth-child(1n) {
-    background-image: url('src//assets/banner-books/book3.png');
+    background-image: url('src/assets/banner-books/book1.png');
   }
   
   .banner-card .swiper-slide:nth-child(2n) {
