@@ -6,7 +6,7 @@ const BestSellerBooks = () => {
   const [books, setBooks] = useState([]);
 //fetch para traer los books
   useEffect(() => {
-    fetch("http://localhost:5000/all-books")
+    fetch("https://mern-book-store-eta.vercel.app/all-books")
       .then((res) => res.json())
       .then((data) => setBooks(data.slice(0,11)));
   }, []);

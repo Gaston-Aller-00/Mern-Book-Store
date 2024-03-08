@@ -58,7 +58,7 @@ const UploadBook = () => {
       bookPdfUrl,
     };
     //enviar data a la db
-    fetch("http://localhost:5000/upload-book",{
+    fetch("https://mern-book-store-eta.vercel.app/upload-book",{
       method:"POST",
       headers:{
         "Content-Type":"application/json",
