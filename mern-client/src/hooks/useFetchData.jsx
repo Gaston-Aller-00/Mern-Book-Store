@@ -6,18 +6,21 @@ const useFetchData = (url, sliceStart = 0, sliceEnd = 16, loadingMessage = "Load
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true); // Establecer isLoading en true al iniciar la carga
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setData(data.slice(sliceStart, sliceEnd));
-        setIsLoading(false);
+        setIsLoading(false); // Establecer isLoading en false cuando los datos se hayan cargado
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setIsLoading(false); // En caso de error, también establecer isLoading en false
       });
   }, [url, sliceStart, sliceEnd]); // Dependencias para que se vuelva a cargar cuando cambien
 
-  const loadingComponent = isLoading ? <p className="flex items-center justify-center font-extrabold text-3xl mt-5">{loadingMessage}</p> : null;
-
-  return { data, isLoading, loadingComponent };
+  return { data, isLoading }; // Devolver solo los datos y el estado de carga
 };
 
 export default useFetchData;
