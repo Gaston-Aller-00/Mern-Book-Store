@@ -11,6 +11,26 @@ const Shop = () => {
       .then((data) => setBooks(data));
   }, []);
 
+  const [isLoading2, setIsLoading2] = useState(true);
+  const [books2, setBooks2] = useState(null);
+
+  useEffect(() => {
+    fetch("https://mern-book-store-eta.vercel.app/all-books")
+      .then((res) => res.json())
+      .then((data) => {
+        setBooks2(data);
+        setIsLoading2(false);
+      });
+  }, []);
+
+  if (isLoading2)
+    return (
+      <p className=" flex items-center justify-center text-5xl font-extrabold mt-28 ">
+        If books load slowly, refresh the page.
+      </p>
+    );
+
+
   return (
     
     <div className="cursor-pointer mt-28 px-4 lg:px-24">
